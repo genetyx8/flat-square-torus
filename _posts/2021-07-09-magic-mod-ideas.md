@@ -5,23 +5,29 @@ date: 2021-07-09 12:41:00 -0000
 tags: [Minecraft, Modding]
 ---
 
-# Design Ideas for a magic mod based on formal languages
+# Design Ideas for a magic mod based on formal languages [WIP]
 
 ## Abstract
-This document gathers preliminary ideas for the design of a magic themed minecraft mod where spells are well formed sentences from a formal language whose rules are randomly generated for each world. The objective is to offer an entirely new experience with each playthrough by introducing a lot of variation in the possible rules. The effect of spells is not hardcoded, rather, the spells that can be expressed in a given language are entirely determined by its rules.
+This document gathers preliminary ideas for the design of a magic themed minecraft mod where spells are true sentences from a formal language whose rules are randomly generated for each world. The objective is to offer an entirely new experience with each playthrough by introducing a lot of variation in the possible rules. The effect of spells is not hardcoded, rather, the spells that can be expressed in a given language are entirely determined by its rules.
 
 
 ## Overall Goals
 * The experience of progressing through the mod should be radically different for each playthrough.
 * The rules of a given language are never given explicitly. Players must discover them by experimenting, and possibly with hints in the form of dungeon loot.
-* The mod should be highly modular and allow in-depth configuration of how languages are generated.
 * The variety of languages should be finely tuned to avoid being unbearably tedious.
-General Design Principles
-* At high level, languages may allow for game breaking spells, but this should be balanced by constraints.
+
+## General Design Principles
+* At high level, the mod may allow for game breaking spells, but this should be balanced by constraints.
 * Information about the magic system should be hidden or obfuscated by default. For instance, if the language has a form of “mana”, the current amount and total capacity of this resource should not be given explicitly to the player from the start. Rather, spells, or items can be later devised to provide that information. That being said, properly communicating to the player at every stage of the mod is very important.
 * As little as possible is hardcoded.
-* Players are encouraged to share their knowledge with each other?
-Formal languages
+* The mod should be highly modular and allow in-depth configuration of how languages are generated.
+* The complexity should emerge from the combinations of a few simple rules. (Depth over Breadth)
+
+## Inspirations
+* Magic The Gathering
+* Heaven's Vault
+* Formal logic, combinatorics and abstract algebra
+## Formal languages
 The core of the mod consists of formal languages whose rules are generated randomly. In particular, we intend to use ideas from the field of sequent calculus and non-classical logic Examples of non-classical logics include
 * Intuitionist logic, which rejects the law of excluded middle
 * Paraconsistent logics (logics that allow the presence of contradiction by restraining the “explosion of truth” problem)
@@ -31,16 +37,40 @@ The core of the mod consists of formal languages whose rules are generated rando
 * Modal logic, which is concerned with formalizing propositions being possibly or necessarily true.
 * Categorial Grammars/ Noncommutative Logic
 * ...
-Not all of these are practical for this mod. For example, the typical language of Modal logic, given by Kripke, concerns itself with multiple “worlds” in which a proposition may be true or false. It is unclear how to translate that into game mechanics in a practical way.
+
+Not all of these are necessarily practical for this mod. For example, the typical language of Modal logic, given by Kripke, concerns itself with multiple “worlds” in which a proposition may be true or false. It is unclear how to translate that into game mechanics in a practical way. Likewise, systems like fuzzy logic that require manipulating real number might be awkward to use.
 
 
-Since we want spells to be “theorems” of our randomly generated languages, these languages need to be relatively weak, both for game balance and for performance.
+Since we want spells to be “theorems” of our randomly generated languages, these languages need to be relatively weak, both for game balance and for performance/solvability.
 
+## Constants
+While we want to have a different experience with each new playthrough, there has to be some things that don't change in order for the player to not be disoriented, and to give him something familiar to latch on to.
+
+One possible example is to have the elements (fire, water, earth, air, ...) common to many cultures as fundamental "words" in every language.
 
 ## Syntaxes
-While the underlying rules of the magic system are described by formal languages, another layer of interaction lies in the “syntax” in which spells are expressed. In this regard, we need not restrict ourselves to strings of symbols. Many interesting examples can be found among esoteric programming languages, such as Piet. Possible syntaxes include
+While the underlying rules of the magic system are described by formal languages, another layer of interaction lies in the “syntax” in which spells are expressed. In this regard, we need not restrict ourselves to strings of symbols. Many interesting examples can be found among esoteric programming languages, such as [Piet](https://esolangs.org/wiki/Piet). Possible syntaxes include
 * Flower beds: Spells are made by arranging flowers in specific patterns. Rules may include that the patterns be a certain shape, follow a certain symmetry, ....
-* Cooking recipes: Spells are made by preparing food with specific ingredients in a specific order.
-* Poetry: Spells are strings of symbols that follow some form of “poetic” constraints (e.g. written in verse, must be of a certain length). This allows for interesting mechanics, such as spells being more potent the more rules they follow/how well they follow them. This is a broad category, as there are many rules imaginable. (See esolangs like Shakespeare for examples)
-* Ideograms: Symbols directly represent objects, such as in Eastern languages like Chinese. This also includes “atypical” (for the average western player) sentence structures. (Note: we can use the magical symbols from minecraft for this)
-The interesting thing about these is that they naturally influence the “metagame” around which spells are actually used. For instance, spells in the flower bed syntax take time to “write”, so that syntax favours more passive/long term spells to be used.
+* Cooking recipes: Spells are made by preparing food with specific ingredients in a specific order. (see also [Chef](https://esolangs.org/wiki/Chef))
+* Poetry: Spells are strings of symbols that follow some form of “poetic” constraints (e.g. written in verse, must be of a certain length). This allows for interesting mechanics, such as spells being more potent the more rules they follow/how well they follow them. This is a broad category, as there are many rules imaginable. (See esolangs like [Shakespeare](http://shakespearelang.sourceforge.net/) for examples)
+* Algebraic writing system: Symbols are made by combining together a small set of core symbols, such as in Chinese writing. This also includes “atypical” (for the average western player) sentence structures. (Note: we can use the magical symbols from minecraft for this)
+* Stone Henge like structure/Altars: similar idea as the flower beds.
+* Music: a spell is a song played on an instrument (ocarina, flute, ...)
+
+The interesting thing about these is that they naturally influence the “metagame” around which spells are actually used. For instance, spells in the flower bed syntax take time to “write”, so that syntax favors more passive/long term spells to be used.
+
+## Semantics
+An important design question that needs to be answered is what it means to cast a spell. My current idea is that spell creation has two steps. First the spell is "written" or "prepared" and then it can actually be cast. For instance, cooking the recipe creates the spell, while eating it casts it. In some syntaxes, creating a spell is simply learning it and it can be cast any number of time afterwards.
+
+Again, this acts on the metagame. In the cooking syntax, the player has to prepare his spells in advance, which is different from a syntax where spells can be cast instantly.
+
+## Balance ideas
+
+* The potency of spells is inversely proportional to the number of players that know them (this encourages players to keep what they know from each other) [NB: Hard to implement, since a given spell can have multiple expressions]
+* The number of spells a player can know at a given time is limited (this encourages "deck building") (see how magic works in Discworld)
+* Words may be assigned some kind of "moral value" such that players using evil spells get some form of karmic retribution.
+
+## Miscelaneous mechanics
+
+* Since "knowing" a spell is a mechanics, it would make sense to have spells that manipulate other player's knowledge (e.g. stealing or making them forget their spells)
+* Word discovery could be done by the use of a scanning spell (à la Thaumcraft scanner) that reveals the "true name" of its target.
