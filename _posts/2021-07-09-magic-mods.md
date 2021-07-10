@@ -8,7 +8,7 @@ tags: [Minecraft, Modding]
 
 Among minecraft mods (regardless of version or modding API), a sizable chunk can be sorted along the dichotomy of “magic” versus “tech” mods. Tech mods are typically themed after science (fiction) and technology, while magic mods are themed after fantasy magic systems and historical magical traditions.
 
-This document is an attempt to show that the difference between tech and magic mods is more than just flavour, and that the mechanics and progression of magic mods is different (or at least ought to be) from that of tech mods in a few key ways.
+This document is an attempt to show that the difference between tech and magic mods is more than just flavour, and that the mechanics and progression of magic mods is different (or at least *ought* to be) from that of tech mods in a few key ways.
 
 The characteristics of magic mods proposed here are by no means strict, nor are they prescriptive. They are based on observations of the most successful mods that are considered to be magic. That being said, I still think that magic mods should be different from tech mods beyond mere flavour, and the criteria implicitly carry that value judgment.
 
@@ -73,7 +73,7 @@ The progression of a magic mod should not be tied purely to material resources. 
 
 Tech mods being based on technology, they assume that the material world is all there is. As such, their progression is purely tied to how many resources the player has. In order to craft the next level of machines, one needs only have enough materials from the previous level. Magic, on the other hand, posits that there is something outside of the material realm, whether it be gods, demons, spirits, other planes of existence subject to different rules…
 
-The reason I’m not calling this criterion spiritualism is that I want to put the emphasis on magic mods having something non material in their mechanics. Thaumcraft makes you solve puzzle minigames to unlock features, thereby representing the process of scholarly research with mechanics. Ars Magica and its descendants have a levelling system where you become more powerful by casting spells.
+The reason I’m not calling this criterion spiritualism is that I want to put the emphasis on magic mods having *something* non material in their mechanics. Thaumcraft makes you solve puzzle minigames to unlock features, thereby representing the process of scholarly research with mechanics. Ars Magica and its descendants have a levelling system where you become more powerful by casting spells.
 
 There are a couple of glaring exceptions to this rule. Equivalent Exchange, in particular, is all about having enough resources, with the added bonus that literally any resources will do. I won’t argue that EE isn’t a magic mod, but the fact that it breaks the progression of literally any mod played beside it is a serious balance problem that might be solved by having some form of non-materialistic mechanic.
 
@@ -88,7 +88,8 @@ This originality in mechanics is often served with copious amounts of visual fla
 
 ## Other aspects of magic mods
 The three criteria above, while not being universal among magic mods, do make sense thematically. There are other other aspects found in magic mods that are worth discussing, even though these could just as well be applied to tech mods.
-Danger
+
+### Danger
 Magic mods sometimes present magic as an inherently dangerous or even evil thing, and as such using it can have negative consequences for the player. This is often done to create the fantasy of being an evil sorcerer.
 
 To my knowledge Thaumcraft is one of the few mods to actually implement a pollution mechanic in the form of Flux. It also implements the player becoming insane from learning dangerous knowledge with Warp. No other mod has you fight tiny mind spiders because you have delved too deep into eldritch knowledge. Thaumcraft’s magic is fundamentally dangerous, and actively resists the player. Thaumcraft will happily give you the fantasy of being a mad sorcerer, and judge you appropriately for going that route.
@@ -96,12 +97,13 @@ To my knowledge Thaumcraft is one of the few mods to actually implement a pollut
 Compare that with tech mods that, despite being ostensibly based on industry and technology, rarely feature any of the negative effects that these can have. The closest we have is nuclear reactors from ic2 going boom and irradiating the nearby terrain when you go out of your way to make them overheat. Modern tech mods don’t even have that. Nothing will ever go wrong on its own, and there are no negative consequences whatsoever.
 
 I think more mods should be like Thaumcraft. It not only makes the mod more engaging, it also gives it more depth. Your mod doesn’t simply yield to the player’s desires, it resists them, thereby making it all the more satisfying when these desires are met.
-Rule of cool (aka flavour)
-Almost universally, magic mods strive to be visually entertaining, by the use of custom models, particles, ... 
+
+### Rule of cool (aka Style over Function)
+Almost universally, magic mods strive to be visually entertaining, by the use of custom models, particles, ..., often to the detriment of the mod's performance.
 
 This is obviously justified by the very idea of magic, which is supposed to be flashy. It also serves to make magic mods stand out from the single block machines that most tech mods use, making them more memorable. This is pure flavour, but while the whole point of this document is to argue that magic mods are more than just flavour, it is still an integral part of the experience.
 
-Sadly, there is a cost to the rule of cool. All these particles, custom models and animations don’t come cheap, and have a tendency to choke the server when used on a large scale. 
+Sadly, there is a cost to the rule of cool. All these particles, custom models and animations don’t come cheap, and have a tendency to choke the server when used on a large scale. With Minecraft being what it is, I don't think this problem is likely to go away. Even if you optimize the visuals of your mod, the very nature of Minecraft's engine (not counting the Bedrock version here) means that you can't get away with as much cool stuff as you could in another game engine.
 
 ## Mystery Flavours
 There are multiple flavours of mystery. One of them is esotericism. Historical magic traditions were often part of organised religions, and many recent ones style themselves after the mystery cults of antiquity (e.g. Gnosticism, Mithraism). They were called so because new initiates into the cult were gradually introduced to more secrets as they progressed through the cult, becoming more and more “enlightened” in the process. The secrets of the world are already known. It’s just that the initiate has to go through the necessary steps to learn them. Mechanically, this can mean that the progression of your mod depends on the player performing certain tasks. Thaumcraft technically does this by unlocking new thaumonomicon entries when scanning certain things in the world.
